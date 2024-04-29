@@ -11,6 +11,13 @@ public class Student {
     private int age;
     private LocalDateTime createdAt;
     public Student(){}
+    public Student(String id, String name, Gender gender, int age){
+        this.id = id;
+        this.name = name;
+        this.gender = gender;
+        this.age = age;
+        createdAt = LocalDateTime.now();
+    }
     public Student(Student student){
         this.id = student.id;
         this.name = student.name;
