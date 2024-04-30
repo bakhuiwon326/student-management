@@ -1,4 +1,4 @@
-package com.heewon.studentmanagement.servlet.student;
+package com.heewon.studentmanagement.servlet;
 
 import com.heewon.studentmanagement.Gender;
 import com.heewon.studentmanagement.bean.Student;

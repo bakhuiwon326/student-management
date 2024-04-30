@@ -1,4 +1,4 @@
-package com.heewon.studentmanagement.servlet.student;
+package com.heewon.studentmanagement.servlet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

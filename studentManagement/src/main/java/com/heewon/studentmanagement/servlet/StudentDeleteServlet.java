@@ -1,9 +1,8 @@
-package com.heewon.studentmanagement.servlet.student;
+package com.heewon.studentmanagement.servlet;
 
 import com.heewon.studentmanagement.repository.StudentRepository;
 import lombok.extern.slf4j.Slf4j;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
