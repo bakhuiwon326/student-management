@@ -31,9 +31,11 @@ public class StudentUpdateServlet extends HttpServlet {
         if(Objects.isNull(id)) throw new RuntimeException("id is null");
         Student selectedStudent = studentRepository.getStudentById(id);
         req.setAttribute("student", selectedStudent);
-        req.setAttribute("action", "/student/update");
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/student/register.jsp");
-        dispatcher.forward(req, resp);
+        //req.setAttribute("action", "/student/update");
+        /*RequestDispatcher dispatcher = req.getRequestDispatcher("/student/register.jsp");
+        dispatcher.forward(req, resp);*/
+
+        req.setAttribute("view", "/student/register.jsp");
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -55,7 +57,8 @@ public class StudentUpdateServlet extends HttpServlet {
         Student updatedStudent = new Student(id, name, gender, age);
         studentRepository.update(updatedStudent);
 
-        resp.setCharacterEncoding("utf-8");
-        resp.sendRedirect(String.format("/student/view?id=%s\n", id));
+        //resp.sendRedirect(String.format("/student/view?id=%s\n", id));
+
+        req.setAttribute("view", String.format("redirect:/student/view.do?id=%s\n", id));
     }
 }

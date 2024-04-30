@@ -30,6 +30,10 @@ public class StudentDeleteServlet extends HttpServlet {
             throw new RuntimeException("id is null");
         }
         studentRepository.deleteById(id);
-        resp.sendRedirect("/student/list");
+
+        //resp.sendRedirect("/student/list");
+
+        req.setAttribute("view", "redirect:/student/list.do");
+
     }
 }

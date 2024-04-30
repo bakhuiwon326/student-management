@@ -27,9 +27,10 @@ public class StudentRegisterServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("action", "/student/register");
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/student/register.jsp");
-        dispatcher.forward(req,resp);
+        //req.setAttribute("action", "/student/register");
+        //RequestDispatcher dispatcher = req.getRequestDispatcher("/student/register.jsp");
+        //dispatcher.forward(req,resp);
+        req.setAttribute("view", "/student/register.jsp");
     }
 
     @Override
@@ -51,8 +52,9 @@ public class StudentRegisterServlet extends HttpServlet {
         int age = Integer.parseInt(ageStr);
         studentRepository.save(new Student(id, name, gender, age));
 
-        String redirect = "/student/view?id=" + id;
-        resp.setCharacterEncoding("utf-8");
-        resp.sendRedirect(redirect);
+        /*String redirect = "/student/view?id=" + id;
+        resp.sendRedirect(redirect);*/
+        String redirect = "redirect:/student/view.do?id=" + id;
+        req.setAttribute("view", redirect);
     }
 }

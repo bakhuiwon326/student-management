@@ -25,11 +25,13 @@ public class StudentViewServlet extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("viewServlet!! get");
         String id = req.getParameter("id");
         if(Objects.isNull(id)) throw new RuntimeException("id is null");
         Student selectedStudent = studentRepository.getStudentById(id);
         req.setAttribute("student", selectedStudent);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/student/view.jsp");
-        dispatcher.forward(req, resp);
+        /*RequestDispatcher dispatcher = req.getRequestDispatcher("/student/view.jsp");
+        dispatcher.forward(req, resp);*/
+        req.setAttribute("view", "/student/view.jsp");
     }
 }
