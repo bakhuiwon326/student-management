@@ -24,6 +24,9 @@
 </head>
 <body>
 <h1>학생리스트</h1>
+<p>
+  <a href="/student/register">등록하러가기</a>
+</p>
 <table>
   <thead>
     <tr>
@@ -31,6 +34,7 @@
       <th>이름</th>
       <th>성별</th>
       <th>나이</th>
+      <th>cmd</th>
     </tr>
   </thead>
   <tbody>
@@ -40,6 +44,7 @@
         <th>${student.name}</th>
         <th>${student.gender}</th>
         <th>${student.age}</th>
+        <th><a href="/student/view?id=${student.id}"/>조회</th>
       </tr>
     </c:forEach>
   </tbody>
