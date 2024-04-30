@@ -1,4 +1,4 @@
-package com.heewon.studentmanagement.servlet;
+package com.heewon.studentmanagement.controller;
 
 import lombok.extern.slf4j.Slf4j;
 
