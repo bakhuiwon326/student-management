@@ -6,11 +6,11 @@
     <!-- error페이지  설정 -->
     <error-page>
         <error-code>404</error-code>
-        <location>/error</location>
+        <location>/error.do</location>
     </error-page>
     <error-page>
         <exception-type>java.lang.Exception</exception-type>
-        <location>/error</location>
+        <location>/error.do</location>
     </error-page>
 
 
